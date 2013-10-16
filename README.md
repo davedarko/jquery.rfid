@@ -36,7 +36,7 @@ This will wait for an HID device to type really fast.
 		};
 
 		// Initialize the plugin.
-		$.cardswipe({
+		$.rfidscan({
 		    parser: rfidParser,
 		    success: goodScan,
 		    error: badScan
