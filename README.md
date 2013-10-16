@@ -19,14 +19,14 @@ This will wait for an HID device to type really fast.
 		// Parses raw scan into name and ID number
 		var rfidParser = function (rawData) {
 			console.log(rawData);
-		    if (rawData.length != 10) return null;
+		    if (rawData.length != 11) return null;
 			else return rawData;
 		    
 		};
 
 		// Called on a good scan (company card recognized)
 		var goodScan = function (cardData) {
-            $("#rfid_card").val(cardData);
+            $("#rfid_card").val(cardData.substr(0,10));
 	        
 	    };
 

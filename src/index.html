@@ -13,15 +13,14 @@
 		// Parses raw scan into name and ID number
 		var rfidParser = function (rawData) {
 			console.log(rawData, rawData.length);
-		    if (rawData.length != 10) return null;
+		    if (rawData.length != 11) return null;
 			else return rawData;
 		    
 		};
 
 		// Called on a good scan (company card recognized)
 		var goodScan = function (cardData) {
-            $("#rfid_card").val(cardData);
-	        
+            $("#rfid_card").val(cardData.substr(0,10));
 	    };
 
 		// Called on a bad scan (company card not recognized)
