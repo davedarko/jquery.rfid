@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.rfid.js"></script>
+		<title>Demo</title>
+	</head>
+	<body>
+		<h1>Cardswipe Demo</h1>
+		<p>Plug in your card reader and scan a card.</p>
+
+		<script type="text/javascript">
+
+		// Parses raw scan into name and ID number
+		var rfidParser = function (rawData) {
+
+		    if (rawData.length != 10) return null;
+			else return rawData;
+		    
+		};
+
+		// Called on a good scan (company card recognized)
+		var goodScan = function (cardData) {
+            $("#rfid_card").val(cardData);
+	        
+	    };
+
+		// Called on a bad scan (company card not recognized)
+		var badScan = function() {
+		    console.log("Bad Scan.");
+		};
+
+		// Initialize the plugin.
+		$.cardswipe({
+		    parser: rfidParser,
+		    success: goodScan,
+		    error: badScan
+		});
+
+		</script>
+
+		<input id="rfid_card"><br />
+	</body>
+	</html>
