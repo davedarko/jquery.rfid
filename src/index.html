@@ -5,14 +5,14 @@
 		<title>Demo</title>
 	</head>
 	<body>
-		<h1>Cardswipe Demo</h1>
+		<h1>RFid Demo</h1>
 		<p>Plug in your card reader and scan a card.</p>
 
 		<script type="text/javascript">
 
 		// Parses raw scan into name and ID number
 		var rfidParser = function (rawData) {
-			console.log(rawData);
+			console.log(rawData, rawData.length);
 		    if (rawData.length != 10) return null;
 			else return rawData;
 		    

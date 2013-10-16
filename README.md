@@ -11,7 +11,7 @@ This will wait for an HID device to type really fast.
 		<title>Demo</title>
 	</head>
 	<body>
-		<h1>Cardswipe Demo</h1>
+		<h1>RFid Demo</h1>
 		<p>Plug in your card reader and scan a card.</p>
 
 		<script type="text/javascript">
